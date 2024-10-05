@@ -15,7 +15,7 @@ class Walks extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'starting-point' => [
+            'starting_point' => [
                 'type'          => 'VARCHAR',
                 'constraint'    => 70,
             ]

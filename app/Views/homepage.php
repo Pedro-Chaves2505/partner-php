@@ -202,7 +202,7 @@
 
 <div class = "create-walk">
     <?=form_open('/walk')?>
-        <input type="text" name="starting-point" placeholder="Ponto de partida" >
+        <input type="text" name="starting_point" placeholder="Ponto de partida" >
         <button type="submit">Convidar a caminhada</button>
     <?= form_close() ?>
 </div>

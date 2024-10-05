@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+
+use App\Models\WalkModel;
+
 class Home extends BaseController
 {
     public function index(): string
@@ -10,6 +13,8 @@ class Home extends BaseController
     }
     public function create_walk(){
         $data = $this->request->getPost();
-        print_r($data) ;
+
+        $walkModel = new WalkModel();
+        $walkModel->create_walk($data);
     }
 }
