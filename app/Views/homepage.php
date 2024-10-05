@@ -208,22 +208,11 @@
 </div>
 <!-- WALK POSTS -->
 <div class="walk-posts">
-<table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Partida</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($walks as $walk): ?>
-                <tr>
-                    <td><?= $walk->id ?></td>
-                    <td><?= $walk->starting_point ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <?php foreach ($walks as $walk): ?>
+        <div class="walk-card" >
+            <p><?= $walk->starting_point ?></p>
+    </div>
+    <?php endforeach; ?>
 </div>
 
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
