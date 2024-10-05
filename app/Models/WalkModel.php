@@ -54,4 +54,10 @@ class WalkModel extends Model
     function create_walk($data) {
         $this->db->query("INSERT INTO walks (starting_point) VALUES ('$data[starting_point]');");
     }
+
+    function get_all_walks() {
+        $query = $this->db->query("SELECT * FROM walks;");
+        $result = $query->getResult();      
+        return $result;
+    }
 }
