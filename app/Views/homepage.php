@@ -208,9 +208,10 @@
 <div class = "create-walk">
     <?=form_open('/walk')?>
         <input type="text" name="starting_point" placeholder="Ponto de partida" >
-            <label for="trajectory">Descrição do trajeto:</label>
-            <textarea name="trajectory" rows=5 columns = 30 >
-            </textarea>
+        <label for="trajectory">Descrição do trajeto:</label>
+        <textarea name="trajectory" rows=5 columns = 30 >
+        </textarea>
+        <input type="datetime-local" name="appointment_datetime">
         <button type="submit">Convidar a caminhada</button>
     <?= form_close() ?>
 </div>
@@ -220,7 +221,7 @@
         <div class="walk-card" >
             <p>Ponto de partida: <?= $walk->starting_point ?></p>
             <p>Trajetória: <?= $walk->trajectory ?></p>
-
+            <p>Data da caminhada: <?= $walk->appointment_datetime?></p>
     </div>
     <?php endforeach; ?>
 </div>

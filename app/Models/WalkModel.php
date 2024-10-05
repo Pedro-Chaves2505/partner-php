@@ -52,7 +52,7 @@ class WalkModel extends Model
     protected $afterDelete    = [];
 
     function create_walk($data) {
-        $this->db->query("INSERT INTO walks (starting_point, trajectory) VALUES ('$data[starting_point]', '$data[trajectory]');");
+        $this->db->query("INSERT INTO walks (starting_point, trajectory, appointment_datetime) VALUES ('$data[starting_point]', '$data[trajectory]', '$data[appointment_datetime]');");
     }
 
     function get_all_walks() {
