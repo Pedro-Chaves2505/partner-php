@@ -212,6 +212,7 @@
         <textarea name="trajectory" rows=5 columns = 30 >
         </textarea>
         <input type="datetime-local" name="appointment_datetime">
+        <input type="text" name="person_name" placeholder="Seu nome" >
         <button type="submit">Convidar a caminhada</button>
     <?= form_close() ?>
 </div>
@@ -222,6 +223,7 @@
             <p>Ponto de partida: <?= $walk->starting_point ?></p>
             <p>Trajetória: <?= $walk->trajectory ?></p>
             <p>Data da caminhada: <?= $walk->appointment_datetime?></p>
+            <p>Nome do organizador: <?= $walk->person_name?></p>
     </div>
     <?php endforeach; ?>
 </div>
