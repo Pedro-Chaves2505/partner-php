@@ -173,7 +173,7 @@
         <ul>
             <li class="logo">
                 <a href="https://codeigniter.com" target="_blank">
-                    Parceiro de Caminhada
+                    <?= APP_NAME?>
                 </a>
             </li>
             <li class="menu-toggle">
