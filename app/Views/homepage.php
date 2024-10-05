@@ -121,6 +121,11 @@
             stroke: #000;
             stroke-width: 32px;
         }
+
+        .walk-card{
+            border: 1px solid black;
+        }
+
         footer {
             background-color: rgba(221, 72, 20, .8);
             text-align: center;
@@ -203,6 +208,9 @@
 <div class = "create-walk">
     <?=form_open('/walk')?>
         <input type="text" name="starting_point" placeholder="Ponto de partida" >
+            <label for="trajectory">Descrição do trajeto:</label>
+            <textarea name="trajectory" rows=5 columns = 30 >
+            </textarea>
         <button type="submit">Convidar a caminhada</button>
     <?= form_close() ?>
 </div>
@@ -210,7 +218,9 @@
 <div class="walk-posts">
     <?php foreach ($walks as $walk): ?>
         <div class="walk-card" >
-            <p><?= $walk->starting_point ?></p>
+            <p>Ponto de partida: <?= $walk->starting_point ?></p>
+            <p>Trajetória: <?= $walk->trajectory ?></p>
+
     </div>
     <?php endforeach; ?>
 </div>

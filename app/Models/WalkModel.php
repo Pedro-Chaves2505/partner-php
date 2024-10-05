@@ -19,7 +19,7 @@ class WalkModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['starting_point'];
+    protected $allowedFields    = ['starting_point', 'trajectory'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -52,7 +52,7 @@ class WalkModel extends Model
     protected $afterDelete    = [];
 
     function create_walk($data) {
-        $this->db->query("INSERT INTO walks (starting_point) VALUES ('$data[starting_point]');");
+        $this->db->query("INSERT INTO walks (starting_point, trajectory) VALUES ('$data[starting_point]', '$data[trajectory]');");
     }
 
     function get_all_walks() {

@@ -17,7 +17,7 @@ class Home extends BaseController
     }
     public function create_walk(){
         $data = $this->request->getPost();
-
+        
         $walkModel = new WalkModel();
         $walkModel->create_walk($data);
 
