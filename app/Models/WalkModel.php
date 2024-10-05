@@ -56,7 +56,7 @@ class WalkModel extends Model
     }
 
     function get_all_walks() {
-        $query = $this->db->query("SELECT * FROM walks;");
+        $query = $this->db->query("SELECT * FROM walks ORDER BY appointment_datetime ASC;");
         $result = $query->getResult();      
         return $result;
     }
