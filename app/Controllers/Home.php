@@ -8,4 +8,7 @@ class Home extends BaseController
     {
         return view('homepage');
     }
+    public function create_walk(){
+        echo "called method create_walk() successfully";
+    }
 }

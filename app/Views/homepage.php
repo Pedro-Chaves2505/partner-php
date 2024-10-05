@@ -200,8 +200,10 @@
 
 <!-- WALK CREATION -->
 
-<div class = "walk-creation">
-
+<div class = "create-walk">
+    <?=form_open('/walk')?>
+        <button type="submit">Convidar a caminhada</button>
+    <?= form_close() ?>
 </div>
 <!-- WALK POSTS -->
 <div class="walk-posts">
