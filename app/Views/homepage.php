@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= APP_NAME?></title>
-    <meta name="description" content="The small framework with powerful features">
+    <title><?= APP_NAME?> | Melhor site para encontrar parceiros de caminhada</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buscando um parceiro de caminhada? Buscando companhia para fazer atividades físicas? Essa é sua melhor solução!">
+    <meta name="keywords" content="caminhada parceiro atividade fisica">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 
     <!-- STYLES -->
