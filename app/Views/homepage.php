@@ -12,6 +12,8 @@
     <style {csp-style-nonce}>
         * {
             transition: background-color 300ms ease, color 300ms ease;
+            color: #0c0a09
+ 
         }
         *:focus {
             background-color: rgba(221, 72, 20, .2);
@@ -26,7 +28,20 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
+
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .display-block{
+            display: block;
+        }
+
         header {
             background-color: rgba(247, 248, 249, 1);
             padding: .4rem 0 0;
@@ -34,6 +49,7 @@
         .menu {
             padding: .4rem 2rem;
         }
+
         header ul {
             border-bottom: 1px solid rgba(242, 242, 242, 1);
             list-style-type: none;
@@ -122,8 +138,63 @@
             stroke-width: 32px;
         }
 
+        textarea{
+            width: 800px;
+            height: 150px;
+            border-radius: 10px;
+            resize: none
+        }
+
+        input{
+            height: 35px;
+            width: 350px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .create-walk {
+            border: 1px solid #737373;
+            width: 50%;
+            margin: 30px 0px 20px 0px;
+            box-shadow: 0px 0px 10px 3px rgba(12, 10, 9, 0.08);
+            border-radius: 4px;
+
+        }
+
+        .create-walk h3 {
+            margin-left: 38%;
+        }
+
+        .create-walk textarea, input, button{
+            margin-bottom: 10px
+        }
+
+        
+
+        .feed-heading{
+            margin-left: 17.5%;
+        }
+
         .walk-card{
-            border: 1px solid black;
+            border: 1px solid #78716c;
+            border-radius: 30px;
+            width: 65%;
+            margin-bottom: 15px;
+            background-color: #f8f8f8;
+            padding: 30px 50px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px 3px rgba(12, 10, 9, 0.15);
+
+        }
+
+        .walk-card h3{
+            font-size: 30px;
+            color: #0c0a09;
+        }
+
+        .walk-card p {
+            font-size: 20px;
+            color: #78716c;
         }
 
         footer {
@@ -204,29 +275,42 @@
 </header>
 
 <!-- WALK CREATION -->
-
-<div class = "create-walk">
-    <?=form_open('/walk')?>
-        <input type="text" name="starting_point" placeholder="Ponto de partida" >
-        <label for="trajectory">Descrição do trajeto:</label>
-        <textarea name="trajectory" rows=5 columns = 30 >
-        </textarea>
-        <input type="datetime-local" name="appointment_datetime">
-        <input type="text" name="person_name" placeholder="Seu nome" >
-        <button type="submit">Convidar a caminhada</button>
-    <?= form_close() ?>
-</div>
-<!-- WALK POSTS -->
-<div class="walk-posts">
-    <?php foreach ($walks as $walk): ?>
-        <div class="walk-card" >
-            <p>Ponto de partida: <?= $walk->starting_point ?></p>
-            <p>Trajetória: <?= $walk->trajectory ?></p>
-            <p>Data da caminhada: <?= $walk->appointment_datetime?></p>
-            <p>Nome do organizador: <?= $walk->person_name?></p>
+<div class="container">
+    <div class = "create-walk">
+        <h3>
+            Publique sua caminhada
+        </h3>
+        <div class="container">
+            <?=form_open('/walk')?>
+                <input type="text" class= "display-block" name="starting_point" placeholder="Ponto de partida" >
+                <label for="trajectory" class= "display-block">Descrição do trajeto:</label>
+                <textarea class= "display-block" name="trajectory" rows=5 columns = 30 >
+                </textarea>
+                <input type="datetime-local" class= "display-block" name="appointment_datetime">
+                <input type="text" class= "display-block" name="person_name" placeholder="Seu nome" >
+                <button class= "display-block" type="submit">Convidar a caminhada</button>
+            <?= form_close() ?>
+        </div>
     </div>
-    <?php endforeach; ?>
 </div>
+
+
+<!-- WALK POSTS -->
+ <div class="walk-posts">
+    <h2 class="feed-heading">Caminhadas com datas mais próximas</h2>
+    <div class="container">
+        <?php foreach ($walks as $walk): ?>
+            <div class="walk-card" >
+                <!-- <label for="">Ponto de partida:</label> -->
+                <h3><?= $walk->starting_point ?></h3>
+                <p>Trajetória: <?= $walk->trajectory ?></p>
+                <p>Data da caminhada: <?= $walk->appointment_datetime?></p>
+                <p>Nome do organizador: <?= $walk->person_name?></p>
+        </div>
+        <?php endforeach; ?>
+    </div>
+ </div>
+
 
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
 
