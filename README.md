@@ -4,7 +4,7 @@
 Esse é um projeto criado para mostrar capacidade conhecimento de back-end e capacidade de criar uma aplicação PHP com CodeIgniter4
 
 ## Funcionalidades
-[x] Publicar uma caminhada
+[x] Publicar uma caminhada\
 [x] Pegar caminhadas com a data mais próxima
 
 ## Imagens
