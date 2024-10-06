@@ -153,13 +153,23 @@
             font-size: 18px;
         }
 
+        button{
+            height: 40px;
+            width: 200px;
+            background-color: rgba(221, 72, 20, .8);
+        }
+
+        button:focus {
+            background-color: rgba(221, 72, 20, .1);
+            outline: none;
+        }
+
         .create-walk {
             border: 1px solid #737373;
             width: 50%;
             margin: 30px 0px 20px 0px;
             box-shadow: 0px 0px 10px 3px rgba(12, 10, 9, 0.08);
             border-radius: 4px;
-
         }
 
         .create-walk h3 {
@@ -169,8 +179,6 @@
         .create-walk textarea, input, button{
             margin-bottom: 10px
         }
-
-        
 
         .feed-heading{
             margin-left: 17.5%;
